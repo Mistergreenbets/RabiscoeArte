@@ -39,4 +39,20 @@
     "descricao": "ideal mpara colecionar",
     "badge": ""
   }
+  {
+    "nome": "Caneca c/ Colher variante",
+    "preco": 75,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto19.png",
+    "descricao": "ideal mpara colecionar",
+    "badge": ""
+  }
+  {
+    "nome": "Caneca Cor",
+    "preco": 75,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto21.png",
+    "descricao": "ideal mpara colecionar",
+    "badge": ""
+  }
 ]
