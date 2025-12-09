@@ -1,667 +1,341 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Catálogo – Rabisco & Arte</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
+/* =======================
+   ESTILO ORIGINAL
+======================= */
 *{ margin:0; padding:0; box-sizing:border-box; font-family:"Poppins",sans-serif;}
+body{ background:#F9F8FC; color:#6C5243; overflow-x:hidden; }
 
-body{
-background:#F9F8FC;
-color:#6C5243;
-overflow-x:hidden;
-}
+.container-vermelho{ background:linear-gradient(90deg,#DED8CC,#ADAC8C); padding:12px; text-align:center; font-weight:600;}
+.texto-branco{ color:#000; }
 
-/* AVISO */
-.container-vermelho{
-background:linear-gradient(90deg,#DED8CC,#ADAC8C);
-padding:12px;
-text-align:center;
-font-weight:600;
-}
-.texto-branco{ color:#fff; }
-
-/* HEADER */
 header{
-text-align:center;
-padding:35px 0;
-background:linear-gradient(180deg,#111,#111);
-border-bottom:2px solid #ADAC8C;
-position:relative; overflow:hidden;
+  text-align:center;
+  padding:35px 0;
+  background:#111;
+  border-bottom:2px solid #ADAC8C;
 }
-header img{ width:280px; }
+header img{width:280px;max-width:80%;}
 
-header::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:50%; height:100%;
-background:linear-gradient(120deg,rgba(255,255,255,.3),rgba(255,255,255,.8),rgba(255,255,255,.3));
+h3{text-align:center;margin:20px;color:#6C5243;letter-spacing:2px;}
+
+.filtro-container{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:25px 10px;
 }
-
-/* TÍTULO */
-h3{text-align:center;margin:20px;color:#6C5243; letter-spacing:2px;}
+.filtro-container button{
+  background:linear-gradient(135deg,#DED8CC,#ADAC8C);
+  border:none;
+  padding:10px 18px;
+  border-radius:25px;
+  font-weight:600;
+  cursor:pointer;
+}
+.filtro-container button.ativo{
+  background:#111;
+  color:#ADAC8C;
+}
 
 /* GRID */
 main{
-max-width:1100px;
-margin:30px auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-padding:0 15px;
+  max-width:1100px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+  padding:0 15px;
 }
 
 /* CARD */
 .produto{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 6px 15px rgba(173,172,140,.3);
-transition:.4s;
-transform: translateY(40px);
-opacity:0;
-}
-.produto.visivel{
-transform: translateY(0);
-opacity:1;
-}
-.produto:hover{
-transform:scale(1.02);
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 6px 15px rgba(173,172,140,.18);
+  position:relative;
+  display:none;
 }
 .produto img{width:100%; height:230px; object-fit:cover;}
-.produto-content{padding:20px;}
-.produto h2{color:#ADAC8C;}
-.produto p{margin:10px 0;}
-.preco{font-weight:bold;color:#ADAC8C;}
+.produto-content{padding:18px;}
+.produto h2{color:#ADAC8C;margin-bottom:6px;}
+.produto p{margin:8px 0;}
+.preco{font-weight:800;color:#ADAC8C;}
+
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:linear-gradient(90deg,#b13f3f,#e06666);
+  color:#fff;
+  padding:6px 12px;
+  border-radius:15px;
+  font-size:11px;
+  font-weight:700;
+}
 
 /* BOTÃO */
-.actions{text-align:center;padding:15px;}
+.actions{text-align:center;padding:14px 18px 22px;}
 .actions button{
-background:linear-gradient(135deg,#DED8CC,#ADAC8C,#DED8CC);
-border:none;
-color:#6C5243;
-padding:14px 30px;
-border-radius:30px;
-cursor:pointer;
-font-weight:600;
-box-shadow:0 4px 10px rgba(173,172,140,.5);
+  background:linear-gradient(135deg,#DED8CC,#ADAC8C,#DED8CC);
+  border:none;
+  color:#6C5243;
+  padding:12px 26px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:0 4px 10px rgba(173,172,140,.35);
+  transition:.25s;
 }
+.actions button:hover{ transform:translateY(-3px); }
 
-/* WHATSAPP FLUTUANTE */
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:#fff;
-padding:15px;
-border-radius:50%;
-font-size:24px;
-z-index:1000;
-box-shadow: 0 4px 10px rgba(0,0,0,.3);
+/* PAGINAÇÃO ORIGINAL */
+.pagination-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin:30px 0 60px;
 }
+.pagination-container button{
+  background:linear-gradient(135deg,#DED8CC,#ADAC8C);
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  color:#6C5243;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(173,172,140,.32);
+}
+.pagination-container button:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+#page-info{color:#ADAC8C;font-weight:800;}
 
-/* MODAL */
+/* MODAL (compacto) */
 #modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:999;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
-.modal-box{
-background:#fff;
-border-radius:10px;
-padding:25px;
-width:90%;
-max-width:350px;
-text-align:center;
+.modal-premium{
+  background:#fff;
+  width:92%;
+  max-width:420px;
+  padding:18px;
+  border-radius:16px;
+  text-align:center;
 }
-.modal-box input{
-width:100%;
-margin-bottom:10px;
-padding:10px;
-border:1px solid #ccc;
-border-radius:5px;
+.modal-premium img{
+  width:100%;
+  max-height:180px;
+  object-fit:cover;
+  border-radius:12px;
 }
-.modal-box button{
-background:#25D366;
-border:none;
-color:#fff;
-padding:10px;
-width:100%;
-border-radius:5px;
-font-weight:bold;
+.modal-premium input{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+.modal-premium button{
+  width:100%;
+  background:#25D366;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
 }
 
-/* FOOTER */
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 25px 10px;
-      border-top: 2px solid #c7a008;
-    }
-
-    footer p {
-      font-size: 0.9em;
-      margin-bottom: 8px;
-    }
-
-    footer a {
-      color: #ADAC8C;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ÍCONES DOURADOS NO RODAPÉ */
-    .social-icons {
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      color: #ADAC8C;
-      font-size: 1.5em;
-      margin: 0 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.2);
-      color: #fff;
-    }
-
-/* RESPONSIVO */
-@media(max-width:600px){
-.whatsapp{right:12px; bottom:12px;}
+/* FOOTER RESTAURADO */
+footer{
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:25px 10px;
+  border-top:2px solid #c7a008;
+}
+footer a{ color:#ADAC8C; font-weight:700; text-decoration:none;}
+.social-icons a{
+  margin:0 10px;
+  font-size:1.3em;
+  color:#ADAC8C;
 }
 </style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
+
 <body>
 
 <div class="container-vermelho">
-<p class="texto-branco">⏰ Últimos dias para encomendar sua cesta de fim de ano! Pedidos somente até 20/12.</p>
+<p class="texto-branco">⏰ Últimos dias para encomendar sua cesta!</p>
 </div>
 
 <header>
-<img src="imgs/logo.png">
+<img src="imgs/logo.png" alt="Rabisco & Arte">
 </header>
 
 <h3>CATÁLOGO PREMIUM</h3>
 
-<iframe 
-  src="banner.html" 
-  style="width:100%; height:260px; border:none; overflow:hidden;"
-  loading="lazy"
-></iframe>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto1.png">
-<div class="produto-content">
-<h2>Caneca Porcelana</h2>
-<p>Elegância e qualidade para o seu dia a dia! Nossa caneca de porcelana é perfeita para personalizar com frases, imagens e memórias especiais.</p>
-<p class="preco">R$ 35,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Porcelana','35,00')">Comprar</button>
-</div>
+<!-- FILTROS -->
+<div class="filtro-container" id="filtroContainer">
+<button data-cat="todos" class="ativo">Todos</button>
+<button data-cat="canecas">Canecas</button>
+<button data-cat="copos">Copos</button>
+<button data-cat="presentes">Presentes</button>
+<button data-cat="decoracao">Decoração</button>
+<button data-cat="vestuario">Vestuário</button>
 </div>
 
-</main>
+<main id="catalogo"></main>
 
-<main>
-
-<div class="produto">
-<img src="imgs/produto2.png">
-<div class="produto-content">
-<h2>Caneca Alça/Interna Cor</h2>
-<p>Escolha a cor que combina com você! Canecas vibrantes e personalizadas ao seu gosto. Dê mais cor ao seu dia.</p>
-<p class="preco">R$ 45,00</p>
+<!-- PAGINAÇÃO -->
+<div class="pagination-container">
+<button id="prev">◀ Anterior</button>
+<span id="page-info">Página 1</span>
+<button id="next">Próximo ▶</button>
 </div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Alça/Interna Cor','45,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto3.png">
-<div class="produto-content">
-<h2>Caneca Preta</h2>
-<p>Sofisticada, moderna e cheia de estilo! A caneca preta personalizada valoriza qualquer arte. Ideal para quem ama um toque premium.</p>
-<p class="preco">R$ 50,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Preta','50,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto4.png">
-<div class="produto-content">
-<h2>Caneca Mágica</h2>
-<p>A caneca que revela a surpresa com o calor! Ao colocar bebida quente, sua imagem aparece como magia! Presente criativo e inesquecível.</p>
-<p class="preco">R$ 55,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Mágica','55,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto5.png">
-<div class="produto-content">
-<h2>Caneca Alça Coração</h2>
-<p>Amor em cada detalhe! A alça em formato de coração transforma qualquer café em um momento especial. Presente perfeito para quem você ama.</p>
-<p class="preco">R$ 50,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Alça Coração','50,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto6.png">
-<div class="produto-content">
-<h2>Caneca com Colher</h2>
-<p>Modelo com tampa. Praticidade e charme em um só produto! A colher acoplada com a tampa traz mais estilo e conforto. Ideal para café, chá e chocolate quente.</p>
-<p class="preco">R$ 60,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca com Colher','60,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto7.png">
-<div class="produto-content">
-<h2>Caneca com Colher</h2>
-<p>Praticidade e charme em um só produto! A colher acoplada traz mais estilo e conforto. Ideal para café, chá e chocolate quente.</p>
-<p class="preco">R$ 55,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca com Colher','55,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto8.png">
-<div class="produto-content">
-<h2>Caneca de Chopp</h2>
-<p>A caneca ideal para quem ama um bom chopp! Personalizada para deixar cada brinde especial. Presente perfeito para os amantes de bebida.</p>
-<p class="preco">R$ 50,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca de Chopp','50,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto9.png">
-<div class="produto-content">
-<h2>Caneca Borda Dourada</h2>
-<p>Sofisticação em cada detalhe! Nossa caneca com borda dourada traz elegância e luxo para sua rotina. Ideal para presentear ou elevar o estilo do seu café.</p>
-<p class="preco">R$ 60,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Borda Dourada','60,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto10.png">
-<div class="produto-content">
-<h2>Torre de Xícaras</h2>
-<p>Organização com elegância! Uma forma charmosa de decorar e otimizar espaço. Ideal para cozinha e cantinho do café.</p>
-<p class="preco">R$ 120,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Torre de Xícaras','120,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto11.png">
-<div class="produto-content">
-<h2>Caneca Wood</h2>
-<p>Alça e tampa em bambu natural, unindo sofisticação e significado em uma peça única para presentear ou colecionar.</p>
-<p class="preco">R$ 65,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Wood','65,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto12.png">
-<div class="produto-content">
-<h2>Torre Majestic</h2>
-<p>Seu cantinho do café ainda mais bonito e organizado! Prático, moderno e decorativo.</p>
-<p class="preco">R$ 100,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Torre Majestic','100,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto13.png">
-<div class="produto-content">
-<h2>Caneca Colméia</h2>
-<p>Design inovador e diferenciado! A caneca colmeia chama atenção e conquista corações. Estilo único para quem gosta do diferente!</p>
-<p class="preco">R$ 55,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Caneca Colméia','55,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto14.png">
-<div class="produto-content">
-<h2>Toalha Lavabo</h2>
-<p>Charme e sofisticação para seu banheiro! Estampadas e personalizadas com delicadeza. Detalhes que fazem a diferença.</p>
-<p class="preco">R$ 15,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Toalha Lavabo','15,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto15.png">
-<div class="produto-content">
-<h2>Camisas Personalizadas</h2>
-<p>Estilo com identidade! Camisas personalizadas do seu jeito, para eventos, empresas ou uso diário. Você imagina, nós criamos!</p>
-<p class="preco">R$ 35,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Camisas Personalizadas','35,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto16.png">
-<div class="produto-content">
-<h2>Squeeze</h2>
-<p>Hidratação com estilo! Leve sua bebida para onde for. Ideal para academia, escola e trabalho.</p>
-<p class="preco">R$ 42,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Squeeze','42,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto17.png">
-<div class="produto-content">
-<h2>Azulejo Personalizado</h2>
-<p>Transforme fotos e frases em decoração exclusiva! Um toque único para sua casa ou presente sofisticado.</p>
-<p class="preco">R$ 25,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Azulejo Personalizado','25,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto18.png">
-<div class="produto-content">
-<h2>Sandálias</h2>
-<p>Conforto e personalidade nos pés! Ideal para presentear ou usar em casa com muito estilo.</p>
-<p class="preco">R$ 30,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Sandália','30,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto19.png">
-<div class="produto-content">
-<h2>Cesta de Presente</h2>
-<p>Surpreenda as pessoas que você ama! Cestas montadas com carinho para todas as ocasiões. Aniversários, datas especiais e muito mais!</p>
-<p class="preco">R$ 75,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Cesta de Presente','75,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<main>
-
-<div class="produto">
-<img src="imgs/produto20.png">
-<div class="produto-content">
-<h2>Long Drink Personalizado</h2>
-<p>O copo perfeito para seus momentos especiais! Personalize do seu jeito e torne cada bebida única. Ideal para festas, brindes e presentes. (Obs:pedido mínimo 50 unidades)</p>
-<p class="preco">R$ 3,90</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Long Drink Personalizado','3,90')">Comprar</button>
-</div>
-</div>
-
-</main>
-<main>
-
-<div class="produto">
-<img src="imgs/produto21.png">
-<div class="produto-content">
-<h2>Copo Térmico 1200</h2>
-<p>Copo Térmico Garrafa 1200ml Com Alça Lateral Em Aço Inox Dupla Camada Tampa Vedada Antivazamento E Canudo. Com Gravação a laser de nome e 5 adesivos grátis.</p>
-<p class="preco">R$ 120,00</p>
-</div>
-<div class="actions">
-<button onclick="abrirModal('Copo Térmico 1200','120,00')">Comprar</button>
-</div>
-</div>
-
-</main>
-
-<footer>
-  <p>&copy; 2025 Rabisco & Arte. Todos os direitos reservados.</p>
-  <p>Desenvolvido por <a href="#">Two Designer / Grupo Mega</a></p>
-  <div class="social-icons">
-    <a href="85994083703"><i class="fas fa-phone"></i></a>
-    <a href="https://www.instagram.com/rabisco.earte"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/5585994083703?text=Oi!%20Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20personalizados."><i class="fab fa-whatsapp"></i></a>
-  </div>
-</footer>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5585994083703?text=Oi!%20Quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20personalizados." target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
 
 <!-- MODAL -->
 <div id="modal">
-  <div class="modal-box">
-    
-    <span onclick="fecharModal()" style="
-      position:absolute;
-      top:10px;
-      right:15px;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:bold;
-      color:#999;">✖</span>
-
+  <div class="modal-premium">
     <h3 id="produtoNome"></h3>
-
-    <p id="viewers" style="color:#ADAC8C; font-size:13px; margin-bottom:10px;"></p>
-
-    <input type="text" id="nome" placeholder="Seu nome">
-    <input type="text" id="cidade" placeholder="Cidade">
-
-    <input type="text" id="cupom" placeholder="Cupom de desconto">
-
-    <p id="desconto" style="font-size:14px; margin-top:5px;"></p>
-
-    <p id="total" style="font-weight:bold; margin:10px 0;"></p>
-
-    <button onclick="enviarPedido()">Enviar Pedido</button>
-
+    <img id="modalImg">
+    <input id="nome" placeholder="Seu nome">
+    <input id="cidade" placeholder="Cidade">
+    <input id="cupom" placeholder="Cupom">
+    <p id="total"></p>
+    <button onclick="enviarPedido()">Finalizar no WhatsApp</button>
   </div>
 </div>
 
+<!-- FOOTER -->
+<footer>
+<p>&copy; 2025 Rabisco & Arte</p>
+<p>Desenvolvido por <a href="#">Two Designer / Grupo Mega</a></p>
+<div class="social-icons">
+<a href="#"><i class="fas fa-phone"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
+</footer>
+
 <script>
 const telefone = "5585994083703";
-let produtoAtual = "";
-let precoAtual = 0;
+let produtoAtual = "", precoAtual = 0;
+let paginaAtual = 1;
+const produtosPorPagina = 6;
+let todosProdutos = [];
 
-function abrirModal(produto, preco) {
+/* === ABRIR MODAL === */
+function abrirModal(nome, preco, imagem){
+  produtoAtual = nome;
   precoAtual = parseFloat(preco.replace(",", "."));
-  produtoAtual = produto;
-  
-  document.getElementById("produtoNome").innerText = `${produto} - R$ ${preco}`;
+  document.getElementById("produtoNome").innerText = nome;
+  document.getElementById("modalImg").src = imagem;
   document.getElementById("modal").style.display = "flex";
-  document.getElementById("cupom").value = "";
-  document.getElementById("desconto").innerText = "";
   atualizarTotal();
-
-  gerarVisualizacoes();
 }
 
-function fecharModal() {
-  document.getElementById("modal").style.display = "none";
+/* === FECHAR MODAL === */
+document.getElementById("modal").onclick = e=>{
+  if(e.target.id==="modal") document.getElementById("modal").style.display="none";
 }
 
-function gerarVisualizacoes() {
-  let pessoas = Math.floor(Math.random() * 11) + 5; // 5 a 15 pessoas
-  document.getElementById("viewers").innerText =
-    `${pessoas} pessoas visualizaram esse produto agora 🔥`;
+/* === TOTAL === */
+function atualizarTotal(){
+  document.getElementById("total").innerText = "Total: R$ " + precoAtual.toFixed(2);
 }
 
-function atualizarTotal() {
-  let cupom = document.getElementById("cupom").value.toUpperCase();
-  let desconto = 0;
-
-  if (cupom === "RABISCO15") {
-    desconto = precoAtual * 0.15;
-    document.getElementById("desconto").innerHTML =
-      `Cupom aplicado: <b>- R$ ${desconto.toFixed(2)}</b>`;
-  } else if (cupom !== "") {
-    document.getElementById("desconto").innerHTML =
-      `Cupom inválido ❌`;
-  }
-
-  let total = precoAtual - desconto;
-  document.getElementById("total").innerHTML =
-    `Total: <b>R$ ${total.toFixed(2)}</b>`;
-
-  return total;
-}
-
-document.getElementById("cupom").addEventListener("input", atualizarTotal);
-
-function enviarPedido() {
+/* === WHATS === */
+function enviarPedido(){
   let nome = document.getElementById("nome").value;
   let cidade = document.getElementById("cidade").value;
-  let cupom = document.getElementById("cupom").value.toUpperCase();
-
-  if (!nome) {
-    alert("Digite seu nome.");
-    return;
-  }
-
-  let total = atualizarTotal();
-
-  let msg = `🛒 *Pedido*\n
-Produto: ${produtoAtual}
-Preço: R$ ${precoAtual.toFixed(2)}
-Cupom: ${cupom || "Nenhum"}
-Total: R$ ${total.toFixed(2)}
-
-👤 Nome: ${nome}
-🏙️ Cidade: ${cidade}`;
-
-  let url = `https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`;
-  window.open(url, "_blank");
+  let texto = `Pedido: ${produtoAtual} | R$ ${precoAtual.toFixed(2)} | Nome: ${nome} | Cidade: ${cidade}`;
+  window.location.href = `https://wa.me/${telefone}?text=` + encodeURIComponent(texto);
 }
 
-/* ANIMAÇÃO DOS CARDS */
-const cards = document.querySelectorAll(".produto");
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visivel");
-    }
-  });
+/* === FILTRO === */
+document.querySelectorAll("#filtroContainer button").forEach(btn=>{
+  btn.onclick = ()=>{
+    document.querySelectorAll("#filtroContainer button").forEach(b=>b.classList.remove("ativo"));
+    btn.classList.add("ativo");
+    filtrar(btn.dataset.cat);
+  }
 });
-cards.forEach(el=>observer.observe(el));
+
+function filtrar(cat){
+  let filtrados = [];
+  todosProdutos.forEach(p=>{
+    p.style.display = "none";
+    if(cat==="todos" || p.dataset.categoria===cat) filtrados.push(p);
+  });
+  todosProdutos = filtrados;
+  paginaAtual = 1;
+  mostrarProdutos();
+}
+
+/* === PAGINAÇÃO === */
+function mostrarProdutos(){
+  const inicio = (paginaAtual - 1) * produtosPorPagina;
+  const fim = paginaAtual * produtosPorPagina;
+  todosProdutos.forEach(p => p.style.display="none");
+  todosProdutos.slice(inicio, fim).forEach(p=>p.style.display="block");
+
+  document.getElementById("page-info").innerText =
+    `Página ${paginaAtual} de ${Math.ceil(todosProdutos.length / produtosPorPagina) || 1}`;
+
+  document.getElementById("prev").disabled = paginaAtual === 1;
+  document.getElementById("next").disabled = paginaAtual >= Math.ceil(todosProdutos.length / produtosPorPagina);
+}
+
+document.getElementById("prev").onclick = ()=>{if(paginaAtual>1){paginaAtual--;mostrarProdutos();}};
+document.getElementById("next").onclick = ()=>{if(paginaAtual < Math.ceil(todosProdutos.length / produtosPorPagina)) {paginaAtual++;mostrarProdutos();}};
+
+/* === CARREGAR PLANILHA === */
+async function carregarProdutos(){
+  const res = await fetch("https://script.google.com/macros/s/AKfycbw23ih5MavfHkC2JTchCaRSlY63VkDQZZ5H0TtvZ43nsiK8-zP8aLhGSWEtHenz9Lm_/exec");
+  const lista = await res.json();
+  const catalogo = document.getElementById("catalogo");
+
+  lista.forEach(p=>{
+    catalogo.innerHTML += `
+      <div class="produto" data-categoria="${p.categoria}">
+        ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
+        <img src="${p.imagem}">
+        <div class="produto-content">
+          <h2>${p.nome}</h2>
+          <p>${p.descricao}</p>
+          <p class="preco">R$ ${p.preco}</p>
+        </div>
+        <div class="actions">
+          <button onclick="abrirModal('${p.nome}','${p.preco}','${p.imagem}')">ENCOMENDAR AGORA</button>
+        </div>
+      </div>
+    `;
+  });
+
+  todosProdutos = Array.from(document.querySelectorAll(".produto"));
+  mostrarProdutos();
+}
+carregarProdutos();
 </script>
 
 </body>
