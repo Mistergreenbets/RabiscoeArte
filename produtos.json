@@ -30,5 +30,13 @@
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto1.png",
     "descricao": "ideal para presentear",
     "badge": "promoção"
+  },
+  {
+    "nome": "Caneca c/ Colher",
+    "preco": 75,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto9.png",
+    "descricao": "ideal mpara colecionar",
+    "badge": ""
   }
 ]
