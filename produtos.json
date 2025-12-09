@@ -4,7 +4,7 @@
     "preco": 35,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto1.png",
-    "descricao": "Elegância e qualidade",
+    "descricao": "Elegância e durabilidade em cada gole. Ideal para presentear ou personalizar com estilo.",
     "badge": "Novidade"
   },
   {
@@ -12,7 +12,7 @@
     "preco": 45,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto2.png",
-    "descricao": "Revela com calor",
+    "descricao": "Detalhes coloridos que transformam seu café em uma experiência sofisticada.",
     "badge": "Promoção"
   },
   {
@@ -20,7 +20,7 @@
     "preco": 50,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto3.png",
-    "descricao": "Ideal academia",
+    "descricao": "Minimalista e moderna, perfeita para quem busca design e requinte em cada bebida.",
     "badge": ""
   },
   {
@@ -28,7 +28,7 @@
     "preco": 55,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto4.png",
-    "descricao": "ideal para presentear",
+    "descricao": "Surpreenda com o efeito revelador que transforma a cor ao adicionar bebida quente.",
     "badge": "promoção"
   },
   {
@@ -36,7 +36,7 @@
     "preco": 50,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto5.png",
-    "descricao": "ideal mpara colecionar",
+    "descricao": "Romântica e charmosa, adiciona carinho a cada momento de café ou chá.",
     "badge": ""
   },
   {
@@ -44,7 +44,7 @@
     "preco": 60,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto6.png",
-    "descricao": "",
+    "descricao": "Praticidade e estilo reunidos, com colher exclusiva para mexer com conforto.",
     "badge": "Novidade"
   },
   {
