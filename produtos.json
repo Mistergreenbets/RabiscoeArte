@@ -4,18 +4,16 @@
     "preco": 35,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto1.png",
-    "descricao": "Eleg?ncia e qualidade",
-    "badge": "Novidade",
-    "ativo": "sim"
+    "descricao": "Elegância e qualidade",
+    "badge": "Novidade"
   },
   {
-    "nome": "Caneca M?gica",
+    "nome": "Caneca Mágica",
     "preco": 55,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto4.png",
     "descricao": "Revela com calor",
-    "badge": "Promo??o",
-    "ativo": "sim"
+    "badge": "Promoção"
   },
   {
     "nome": "Squeeze",
@@ -23,7 +21,14 @@
     "categoria": "copos",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto16.png",
     "descricao": "Ideal academia",
-    "badge": "",
-    "ativo": "sim"
+    "badge": ""
+  },
+  {
+    "nome": "Caneca Dourada",
+    "preco": 60,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto1.png",
+    "descricao": "ideal para presentear",
+    "badge": "promoção"
   }
 ]
