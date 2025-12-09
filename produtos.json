@@ -74,7 +74,7 @@
   {
     "nome": "Torre de Xicaras",
     "preco": 120,
-    "categoria": "canecas",
+    "categoria": "decoracao",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto10.png",
     "descricao": "",
     "badge": "Promoção"
@@ -90,7 +90,7 @@
   {
     "nome": "Torre Majestic",
     "preco": 100,
-    "categoria": "canecas",
+    "categoria": "decoracao",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto12.png",
     "descricao": "",
     "badge": ""
@@ -122,13 +122,13 @@
   {
     "nome": "Azulejo",
     "preco": 25,
-    "categoria": "presentes",
+    "categoria": "decoracao",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto17.png",
     "descricao": "",
     "badge": "Promoção"
   },
   {
-    "nome": "Sandalias",
+    "nome": "Sandálias",
     "preco": 30,
     "categoria": "vestuario",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto18.png",
@@ -152,7 +152,7 @@
     "badge": ""
   },
   {
-    "nome": "Copo Termico",
+    "nome": "Copo Térmico",
     "preco": 120,
     "categoria": "copos",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto21.png",
