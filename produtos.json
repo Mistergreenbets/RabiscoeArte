@@ -1,0 +1,29 @@
+[
+  {
+    "nome": "Caneca Porcelana",
+    "preco": 35,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto1.png",
+    "descricao": "Eleg?ncia e qualidade",
+    "badge": "Novidade",
+    "ativo": "sim"
+  },
+  {
+    "nome": "Caneca M?gica",
+    "preco": 55,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto4.png",
+    "descricao": "Revela com calor",
+    "badge": "Promo??o",
+    "ativo": "sim"
+  },
+  {
+    "nome": "Squeeze",
+    "preco": 42,
+    "categoria": "copos",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto16.png",
+    "descricao": "Ideal academia",
+    "badge": "",
+    "ativo": "sim"
+  }
+]
