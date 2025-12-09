@@ -8,51 +8,155 @@
     "badge": "Novidade"
   },
   {
-    "nome": "Caneca Mágica",
-    "preco": 55,
+    "nome": "Caneca Alça/Interna Cor",
+    "preco": 45,
     "categoria": "canecas",
-    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto4.png",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto2.png",
     "descricao": "Revela com calor",
     "badge": "Promoção"
   },
   {
-    "nome": "Squeeze",
-    "preco": 42,
-    "categoria": "copos",
-    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto16.png",
+    "nome": "Caneca Preta",
+    "preco": 50,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto3.png",
     "descricao": "Ideal academia",
     "badge": ""
   },
   {
-    "nome": "Caneca Dourada",
-    "preco": 60,
+    "nome": "Caneca Magica",
+    "preco": 55,
     "categoria": "canecas",
-    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto1.png",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto4.png",
     "descricao": "ideal para presentear",
     "badge": "promoção"
   },
   {
+    "nome": "Caneca Alça Coração",
+    "preco": 50,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto5.png",
+    "descricao": "ideal mpara colecionar",
+    "badge": ""
+  },
+  {
     "nome": "Caneca c/ Colher",
-    "preco": 75,
+    "preco": 60,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto6.png",
+    "descricao": "",
+    "badge": "Novidade"
+  },
+  {
+    "nome": "Caneca c/ Colher (Variante)",
+    "preco": 55,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto7.png",
+    "descricao": "",
+    "badge": "Promoção"
+  },
+  {
+    "nome": "Caneca de Chopp",
+    "preco": 50,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto8.png",
+    "descricao": "",
+    "badge": ""
+  },
+  {
+    "nome": "Caneca Borda Dourada",
+    "preco": 60,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto9.png",
-    "descricao": "ideal mpara colecionar",
+    "descricao": "",
+    "badge": "Novidade"
+  },
+  {
+    "nome": "Torre de Xicaras",
+    "preco": 120,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto10.png",
+    "descricao": "",
+    "badge": "Promoção"
+  },
+  {
+    "nome": "Caneca Wood",
+    "preco": 65,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto11.png",
+    "descricao": "",
+    "badge": "Novidade"
+  },
+  {
+    "nome": "Torre Majestic",
+    "preco": 100,
+    "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto12.png",
+    "descricao": "",
     "badge": ""
   },
   {
-    "nome": "Caneca c/ Colher variante",
-    "preco": 75,
+    "nome": "Caneca Colmeia",
+    "preco": 55,
     "categoria": "canecas",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto13.png",
+    "descricao": "",
+    "badge": ""
+  },
+  {
+    "nome": "Toalha Lavabo",
+    "preco": 15,
+    "categoria": "vestuario",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto14.png",
+    "descricao": "",
+    "badge": "Novidade"
+  },
+  {
+    "nome": "Camisa",
+    "preco": 35,
+    "categoria": "vestuario",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto15.png",
+    "descricao": "",
+    "badge": ""
+  },
+  {
+    "nome": "Azulejo",
+    "preco": 25,
+    "categoria": "presentes",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto16.png",
+    "descricao": "",
+    "badge": "Promoção"
+  },
+  {
+    "nome": "Sandalias",
+    "preco": 30,
+    "categoria": "vestuario",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto17.png",
+    "descricao": "",
+    "badge": ""
+  },
+  {
+    "nome": "Cesta de Presentes",
+    "preco": 75,
+    "categoria": "presentes",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto18.png",
+    "descricao": "",
+    "badge": "Novidade"
+  },
+  {
+    "nome": "Long Drink",
+    "preco": 3.9,
+    "categoria": "copos",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto19.png",
-    "descricao": "ideal mpara colecionar",
+    "descricao": "",
     "badge": ""
   },
   {
-    "nome": "Caneca Cor",
-    "preco": 75,
-    "categoria": "canecas",
-    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto21.png",
-    "descricao": "ideal mpara colecionar",
-    "badge": ""
+    "nome": "Copo Termico",
+    "preco": 120,
+    "categoria": "copos",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto20.png",
+    "descricao": "",
+    "badge": "Promoção"
   }
 ]
