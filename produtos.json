@@ -52,7 +52,7 @@
     "preco": 55,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto7.png",
-    "descricao": "",
+    "descricao": "Variante sofisticada da clássica caneca com colher, perfeita para uso diário ou presente.",
     "badge": "Promoção"
   },
   {
@@ -60,7 +60,7 @@
     "preco": 50,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto8.png",
-    "descricao": "",
+    "descricao": "Ideal para celebrar momentos especiais, com design robusto e elegante.",
     "badge": ""
   },
   {
@@ -68,7 +68,7 @@
     "preco": 60,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto9.png",
-    "descricao": "",
+    "descricao": "Luxo em cada detalhe, com acabamento dourado que impressiona em qualquer ocasião.",
     "badge": "Novidade"
   },
   {
@@ -76,7 +76,7 @@
     "preco": 120,
     "categoria": "decoracao",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto10.png",
-    "descricao": "",
+    "descricao": "Organização e sofisticação em um conjunto compacto, ideal para servir com classe.",
     "badge": "Promoção"
   },
   {
@@ -84,7 +84,7 @@
     "preco": 65,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto11.png",
-    "descricao": "",
+    "descricao": "Toque rústico e natural, unindo madeira e cerâmica para um estilo único.",
     "badge": "Novidade"
   },
   {
@@ -92,7 +92,7 @@
     "preco": 100,
     "categoria": "decoracao",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto12.png",
-    "descricao": "",
+    "descricao": "Conjunto majestoso de xícaras, perfeito para impressionar em qualquer reunião.",
     "badge": ""
   },
   {
@@ -100,7 +100,7 @@
     "preco": 55,
     "categoria": "canecas",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto13.png",
-    "descricao": "",
+    "descricao": "Design exclusivo em relevo, elegante e moderno, trazendo personalidade ao café.",
     "badge": ""
   },
   {
@@ -108,7 +108,7 @@
     "preco": 15,
     "categoria": "vestuario",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto14.png",
-    "descricao": "",
+    "descricao": "Toque de sofisticação para o lavabo, com textura premium e acabamento impecável.",
     "badge": "Novidade"
   },
   {
@@ -116,7 +116,7 @@
     "preco": 35,
     "categoria": "vestuario",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto15.png",
-    "descricao": "",
+    "descricao": "Conforto e estilo em tecido de alta qualidade, ideal para o dia a dia ou ocasiões especiais.",
     "badge": ""
   },
   {
@@ -124,7 +124,7 @@
     "preco": 42,
     "categoria": "presentes",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto16.png",
-    "descricao": "",
+    "descricao": "Hidratação prática e elegante, perfeito para acompanhar sua rotina com estilo.",
     "badge": ""
   },
   {
@@ -132,7 +132,7 @@
     "preco": 25,
     "categoria": "decoracao",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto17.png",
-    "descricao": "",
+    "descricao": "Peça decorativa sofisticada, ideal para personalizar ambientes com charme.",
     "badge": "Promoção"
   },
   {
@@ -140,7 +140,7 @@
     "preco": 30,
     "categoria": "vestuario",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto18.png",
-    "descricao": "",
+    "descricao": "Conforto e design moderno, unindo estilo e bem-estar para cada passo.",
     "badge": ""
   },
   {
@@ -148,7 +148,7 @@
     "preco": 75,
     "categoria": "presentes",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto19.png",
-    "descricao": "",
+    "descricao": "Seleção premium de produtos, pronta para encantar e surpreender em qualquer ocasião.",
     "badge": "Novidade"
   },
   {
@@ -156,7 +156,7 @@
     "preco": 3.9,
     "categoria": "copos",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto20.png",
-    "descricao": "",
+    "descricao": "Material de alta qualidade, perfeito para drinks e momentos de celebração.",
     "badge": ""
   },
   {
@@ -164,7 +164,7 @@
     "preco": 120,
     "categoria": "copos",
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto21.png",
-    "descricao": "",
+    "descricao": "Mantém sua bebida na temperatura ideal, com design moderno e funcional.",
     "badge": "Promoção"
   }
 ]
