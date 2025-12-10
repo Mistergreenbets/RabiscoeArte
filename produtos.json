@@ -120,6 +120,14 @@
     "badge": ""
   },
   {
+    "nome": "Squeeze",
+    "preco": 42,
+    "categoria": "presentes",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto16.png",
+    "descricao": "",
+    "badge": ""
+  },
+  {
     "nome": "Azulejo",
     "preco": 25,
     "categoria": "decoracao",
