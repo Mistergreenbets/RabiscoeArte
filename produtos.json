@@ -166,5 +166,21 @@
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto21.png",
     "descricao": "Mantém sua bebida na temperatura ideal, com design moderno e funcional.",
     "badge": "Promoção"
+  },
+  {
+    "nome": "Bonés",
+    "preco": 22,
+    "categoria": "vestuario",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto23.png",
+    "descricao": "Boné personalizado com acabamento de qualidade e visual moderno. Confortável, estiloso e perfeito para destacar marcas, equipes ou uso casual.",
+    "badge": ""
+  },
+  {
+    "nome": "Ecobag",
+    "preco": 25,
+    "categoria": "vestuario",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto24.png",
+    "descricao": "Ecobag personalizada confeccionada em material resistente e reutilizável, ideal para quem busca praticidade com estilo. A personalização é feita com alta qualidade, garantindo cores vivas e excelente durabilidade.",
+    "badge": ""
   }
 ]
