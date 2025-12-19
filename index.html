@@ -6,75 +6,490 @@
 <title>Catálogo – Rabisco & Arte</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{background:#F9F8FC;color:#6C5243;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-.container-vermelho{background:linear-gradient(90deg,#DED8CC,#ADAC8C);padding:12px;text-align:center;font-weight:600;}
-.texto-branco{color:#000000;}
-header{text-align:center;padding:35px 0;background:linear-gradient(180deg,#111,#111);border-bottom:2px solid #ADAC8C;position:relative;overflow:hidden;}
-header img{width:280px;max-width:80%;}
-h3{text-align:center;margin:20px;color:#6C5243;letter-spacing:2px;}
-.filtro-container{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:25px 10px;}
-.filtro-container button{background:linear-gradient(135deg,#DED8CC,#ADAC8C);border:none;padding:10px 18px;border-radius:25px;font-weight:600;color:#6C5243;cursor:pointer;transition:.22s ease;box-shadow:0 4px 8px rgba(173,172,140,.3);}
-.filtro-container button:hover{transform:translateY(-3px) scale(1.02);}
-.filtro-container button.ativo{background:#111;color:#ADAC8C;box-shadow:0 8px 20px rgba(0,0,0,.25);}
-main{max-width:1100px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;padding:0 15px;}
-.produto{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 15px rgba(173,172,140,.18);transition:.35s;transform:translateY(12px);opacity:0;position:relative;}
-.produto.visivel{transform:translateY(0);opacity:1;}
-.produto:hover{transform:scale(1.02);box-shadow:0 10px 25px rgba(0,0,0,.08);}
-.produto img{width:100%;height:230px;object-fit:cover;}
-.produto-content{padding:18px;}
-.produto h2{color:#ADAC8C;margin-bottom:6px;}
-.produto p{margin:8px 0;color:#6C5243;line-height:1.3;}
-.preco{font-weight:800;color:#ADAC8C;font-size:1.05rem;}
-.badge{position:absolute;top:12px;left:12px;background:linear-gradient(90deg,#b13f3f,#e06666);color:#fff;padding:6px 12px;border-radius:15px;font-size:11px;font-weight:700;text-transform:uppercase;box-shadow:0 3px 6px rgba(0,0,0,0.18);letter-spacing:1px;}
-.actions{text-align:center;padding:14px 18px 22px;}
-.actions button{background:linear-gradient(135deg,#DED8CC,#ADAC8C,#DED8CC);border:none;color:#6C5243;padding:12px 26px;border-radius:30px;cursor:pointer;font-weight:700;box-shadow:0 4px 10px rgba(173,172,140,.35);transition:.25s;}
-.actions button:hover{transform:translateY(-3px);}
-.whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:15px;border-radius:50%;font-size:20px;z-index:1000;box-shadow:0 6px 18px rgba(0,0,0,.2);}
-#modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;justify-content:center;align-items:center;z-index:9999;}
-.modal-premium{background:#fff;width:92%;max-width:420px;padding:18px;border-radius:16px;text-align:center;position:relative;box-shadow:0 25px 50px rgba(0,0,0,.3);animation:modalIn .35s ease;}
-@keyframes modalIn{from{opacity:0;transform:scale(.9);}to{opacity:1;transform:scale(1);}}
-.modal-close{position:absolute;top:10px;right:14px;cursor:pointer;font-size:18px;color:#999;}
-.modal-header h3{margin-bottom:2px;color:#111;font-size:1.05rem;font-weight:800;line-height:1.2;}
-.viewers{margin:2px 0;color:#ADAC8C;font-size:12.5px;line-height:1.2;}
-.modal-alert{margin-top:2px;color:#ff3d8e;font-size:16px;font-weight:700;}
-.modal-form input{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ddd;font-size:14px;}
-.status-box{margin:8px 0 6px;}
-#total{font-weight:800;font-size:14px;margin-top:2px;}
-.btn-whatsapp{background:#25D366;border:none;width:100%;padding:14px;border-radius:12px;font-size:15px;color:#fff;font-weight:800;cursor:pointer;margin-top:8px;box-shadow:0 0 18px rgba(37,211,102,.5);transition:.25s;}
-.btn-whatsapp:hover{transform:scale(1.04);}
-.modal-img{width:100%;max-height:180px;object-fit:cover;border-radius:12px;margin-bottom:6px;}
-footer{background:#111;color:#aaa;text-align:center;padding:25px 10px;border-top:2px solid #c7a008;}
-footer p{font-size:0.92em;margin-bottom:8px;}
-footer a{color:#ADAC8C;text-decoration:none;font-weight:700;}
-footer a:hover{text-decoration:underline;}
-.social-icons{margin-top:10px;}
-.social-icons a{color:#ADAC8C;font-size:1.4em;margin:0 10px;transition: transform 0.25s ease;}
-.social-icons a:hover{transform:scale(1.15);color:#fff;}
-.pagination-container{display:flex;justify-content:center;align-items:center;gap:15px;margin:30px 0 60px;}
-.pagination-container button{background:linear-gradient(135deg,#DED8CC,#ADAC8C);border:none;padding:10px 18px;border-radius:30px;color:#6C5243;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(173,172,140,.32);}
-.pagination-container button[disabled]{opacity:.45;cursor:not-allowed;transform:none;}
-#page-info{color:#ADAC8C;font-weight:800;}
-@media(max-width:900px){.produto img{height:200px;}}
-@media(max-width:700px){main{grid-template-columns:repeat(2,1fr);} .produto img{height:150px;} .produto h2{font-size:14px;}.produto p{font-size:12px;} .whatsapp{right:12px;bottom:12px;}}
-.placinha-local{
-  margin-top:6px;
-  display:inline-block;
-  background:linear-gradient(135deg,#DED8CC,#ADAC8C);
-  color:#6C5243;
+/* ===============================
+   VARIÁVEIS DE IDENTIDADE VISUAL
+================================ */
+:root{
+  --cor-principal: #964BA8;
+  --cor-principal-clara: #B98AD3;
+  --cor-principal-escura: #6E2F87;
+  --cor-texto: #333;
+  --cor-fundo: #FFFFFF;
+  --cor-sombra: rgba(0,0,0,.12);
+}
+
+/* ===============================
+   RESET & BASE
+================================ */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:var(--cor-fundo);
+  color:var(--cor-texto);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===============================
+   TOPO PROMOCIONAL
+================================ */
+.container-vermelho{
+  background: linear-gradient(90deg,#25D366,#1EBE5D);
+  padding:12px;
+  text-align:center;
+  font-weight:600;
+}
+
+.texto-branco{
+  color:#fff;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header{
+  text-align:center;
+  padding:35px 0;
+  background:linear-gradient(180deg,var(--cor-principal-escura),var(--cor-principal));
+  border-bottom:2px solid var(--cor-principal-clara);
+}
+
+header img{
+  width:280px;
+  max-width:80%;
+}
+
+/* ===============================
+   TÍTULOS
+================================ */
+h3{
+  text-align:center;
+  margin:20px;
+  color:var(--cor-principal);
+  letter-spacing:2px;
+}
+
+/* ===============================
+   FILTROS
+================================ */
+.filtro-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:25px 10px;
+}
+
+.filtro-container button{
+  background:linear-gradient(135deg,var(--cor-principal-clara),var(--cor-principal));
+  border:none;
+  padding:10px 18px;
+  border-radius:25px;
+  font-weight:700;
+  color:#fff;
+  cursor:pointer;
+  transition:.22s ease;
+  box-shadow:0 4px 8px rgba(150,75,168,.35);
+}
+
+.filtro-container button:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+.filtro-container button.ativo{
+  background:var(--cor-principal-escura);
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* ===============================
+   CATÁLOGO
+================================ */
+main{
+  max-width:1100px;
+  margin:30px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+  padding:0 15px;
+}
+
+/* ===============================
+   CARD PRODUTO
+================================ */
+.produto{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 6px 15px var(--cor-sombra);
+  transition:.35s;
+  transform:translateY(12px);
+  opacity:0;
+  position:relative;
+}
+
+.produto.visivel{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.produto:hover{
+  transform:scale(1.02);
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.produto img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+/* ===============================
+   CONTEÚDO PRODUTO
+================================ */
+.produto-content{
+  padding:18px;
+}
+
+.produto h2{
+  color:var(--cor-principal);
+  margin-bottom:6px;
+}
+
+.produto p{
+  margin:8px 0;
+  line-height:1.3;
+}
+
+.preco{
+  font-weight:800;
+  color:var(--cor-principal-escura);
+  font-size:1.05rem;
+}
+
+/* ===============================
+   BADGE
+================================ */
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:linear-gradient(90deg,var(--cor-principal),var(--cor-principal-escura));
+  color:#fff;
+  padding:6px 12px;
+  border-radius:15px;
   font-size:11px;
   font-weight:800;
-  padding:6px 14px;
-  border-radius:22px;
-  letter-spacing:.6px;
-  box-shadow:0 4px 10px rgba(173,172,140,.35);
+  text-transform:uppercase;
+  box-shadow:0 3px 6px rgba(0,0,0,.18);
+  letter-spacing:1px;
+}
+
+/* ===============================
+   AÇÕES
+================================ */
+.actions{
+  text-align:center;
+  padding:14px 18px 22px;
+}
+
+.actions button{
+  background:linear-gradient(135deg,var(--cor-principal),var(--cor-principal-escura));
+  border:none;
+  color:#fff;
+  padding:12px 26px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:800;
+  box-shadow:0 4px 12px rgba(150,75,168,.45);
+  transition:.25s;
+}
+
+.actions button:hover{
+  transform:translateY(-3px);
+}
+
+/* ===============================
+   WHATSAPP FIXO
+================================ */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  font-size:20px;
+  z-index:1000;
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+
+/* ===============================
+   MODAL (CORRIGIDO)
+================================ */
+#modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.7);
+  display:none; /* IMPORTANTE */
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding:15px;
+}
+
+.modal-premium{
+  background:#fff;
+  width:100%;
+  max-width:420px;
+  padding:18px;
+  border-radius:16px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 25px 50px rgba(0,0,0,.35);
+  animation:modalIn .35s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes modalIn{
+  from{
+    opacity:0;
+    transform:translateY(20px) scale(.95);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* BOTÃO FECHAR */
+.modal-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  cursor:pointer;
+  font-size:20px;
+  color:#999;
+}
+
+/* IMAGEM DO MODAL */
+.modal-img{
+  width:100%;
+  max-height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:8px;
+}
+
+/* HEADER MODAL */
+.modal-header h3{
+  margin-bottom:4px;
+  color:var(--cor-principal-escura);
+  font-size:1.05rem;
+  font-weight:800;
+}
+
+.viewers{
+  color:var(--cor-principal);
+  font-size:12.5px;
+  margin-bottom:4px;
+}
+
+.modal-alert{
+  color:#ff3d8e;
+  font-size:15px;
+  font-weight:800;
+}
+
+/* FORM */
+.modal-form input{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:14px;
+}
+
+/* ===============================
+   STATUS
+================================ */
+#total{
+  font-weight:900;
+  font-size:20px;
+  margin-top:8px;
+  color:var(--cor-principal-escura);
+  background:#f6f0fa;
+  padding:10px;
+  border-radius:12px;
 }
 
 .prazo{
   margin-top:6px;
   font-size:12px;
-  font-weight:700;
+  font-weight:800;
   color:#ff3d8e;
+}
+
+/* ===============================
+   BOTÃO FINAL
+================================ */
+.btn-whatsapp{
+  background:#25D366;
+  border:none;
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  font-size:15px;
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+  margin-top:8px;
+  box-shadow:0 0 18px rgba(37,211,102,.5);
+  transition:.25s;
+}
+
+.btn-whatsapp:hover{
+  transform:scale(1.04);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer{
+  background:var(--cor-principal-escura);
+  color:#eee;
+  text-align:center;
+  padding:25px 10px;
+}
+
+footer a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+
+.social-icons a{
+  color:#fff;
+  font-size:1.4em;
+  margin:0 10px;
+  transition:transform .25s;
+}
+
+.social-icons a:hover{
+  transform:scale(1.15);
+}
+
+/* ===============================
+   PAGINAÇÃO
+================================ */
+.pagination-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin:30px 0 60px;
+}
+
+.pagination-container button{
+  background:linear-gradient(135deg,var(--cor-principal),var(--cor-principal-escura));
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.pagination-container button[disabled]{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+@media(max-width:900px){
+  .produto img{height:200px;}
+}
+
+@media(max-width:700px){
+  main{grid-template-columns:repeat(2,1fr);}
+  .produto img{height:150px;}
+  .produto h2{font-size:14px;}
+  .produto p{font-size:12px;}
+  .whatsapp{right:12px;bottom:12px;}
+}
+/* ===============================
+   PROVA SOCIAL DINÂMICA
+================================ */
+.prova-social-dinamica{
+  background:#faf7fc;
+  padding:45px 15px;
+  text-align:center;
+}
+
+.prova-social-dinamica h3{
+  color:var(--cor-principal);
+  margin-bottom:8px;
+}
+
+.avaliacao-geral{
+  font-size:14px;
+  font-weight:800;
+  color:var(--cor-principal-escura);
+  margin-bottom:25px;
+}
+
+.depoimento-dinamico{
+  max-width:520px;
+  margin:0 auto;
+  background:#fff;
+  padding:22px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.10);
+  transition:opacity .4s ease, transform .4s ease;
+}
+
+.depoimento-dinamico p{
+  font-size:14px;
+  line-height:1.5;
+}
+
+.depoimento-dinamico span{
+  display:block;
+  margin-top:12px;
+  font-weight:800;
+  color:var(--cor-principal);
+  font-size:12px;
+}
+#depoimentoBox{
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .45s ease, transform .45s ease;
+}
+
+#depoimentoBox.ativo{
+  opacity:1;
+  transform:translateY(0);
+}
+/* === PREÇO CATÁLOGO (FORÇADO) === */
+.produto .produto-content .preco{
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--cor-principal-escura);
 }
 
 </style>
@@ -110,6 +525,18 @@ footer a:hover{text-decoration:underline;}
   <span id="page-info">Página 1 de 1</span>
   <button id="next">Próximo ▶</button>
 </div>
+<section class="prova-social-dinamica">
+  <h3>Clientes satisfeitos 💜</h3>
+
+  <div class="avaliacao-geral">
+    ⭐⭐⭐⭐⭐ <strong>4,9</strong> de 5 • <strong>+300 pedidos entregues</strong>
+  </div>
+
+  <div class="depoimento-dinamico" id="depoimentoBox">
+    <p id="depoimentoTexto"></p>
+    <span id="depoimentoAutor"></span>
+  </div>
+</section>
 
 <footer>
   <p>&copy; 2025 Rabisco & Arte. Todos os direitos reservados</p>
@@ -140,10 +567,6 @@ footer a:hover{text-decoration:underline;}
 
   <div class="status-box">
     <p id="total"></p>
-
-    <div class="placinha-local">
-      📍 Produção local – Fortaleza
-    </div>
 
     <p class="prazo">
       ⏱ Produção em até 3 dias úteis
@@ -212,7 +635,7 @@ function renderizarCards(){
         <p>${p.descricao}</p>
         <p class="preco">R$ ${precoStr}</p>
       </div>
-      <div class="actions"><button type="button" class="btn-encomendar">ENCOMENDAR AGORA</button></div>
+      <div class="actions"><button type="button" class="btn-encomendar">PERSONALIZAR AGORA</button></div>
     `;
     catalogo.appendChild(card);
   });
@@ -231,7 +654,7 @@ function abrirModalFromCard(card){
   totalFinal = precoAtual;
   document.getElementById("produtoNome").innerText = `${produtoAtualNome} — R$ ${precoAtual.toFixed(2)}`;
   document.getElementById("modalImg").src = card.dataset.imagem;
-  document.getElementById("total").innerHTML = `Total: <b>R$ ${totalFinal.toFixed(2)}</b>`;
+  document.getElementById("total").innerHTML = `Valor: <b>R$ ${totalFinal.toFixed(2)}</b>`;
   document.getElementById("modal").style.display = "flex";
   gerarVisualizacoes();
 }
@@ -326,5 +749,64 @@ function mostrarProdutos(){
 
 document.addEventListener("DOMContentLoaded", carregarProdutos);
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const depoimentos = [
+    {
+      texto: "A caneca ficou linda, com acabamento impecável.",
+      autor: "Juliana M. · Fortaleza/CE"
+    },
+    {
+      texto: "Entrega rápida e atendimento muito atencioso.",
+      autor: "Carlos R. · Caucaia/CE"
+    },
+    {
+      texto: "Comprei e superou todas as expectativas.",
+      autor: "Renata S. · Maracanaú/CE"
+    },
+    {
+      texto: "Qualidade acima do esperado. Voltarei a comprar.",
+      autor: "Amanda L. · Eusébio/CE"
+    }
+  ];
+
+  let indice = 0;
+  let intervalo;
+
+  const textoEl = document.getElementById("depoimentoTexto");
+  const autorEl = document.getElementById("depoimentoAutor");
+  const box = document.getElementById("depoimentoBox");
+
+  if(!textoEl || !autorEl || !box) return;
+
+  function trocarDepoimento(){
+    box.classList.remove("ativo");
+
+    setTimeout(() => {
+      textoEl.innerText = `“${depoimentos[indice].texto}”`;
+      autorEl.innerText = `— ${depoimentos[indice].autor}`;
+
+      box.classList.add("ativo");
+      indice = (indice + 1) % depoimentos.length;
+    }, 350);
+  }
+
+  function iniciarRotacao(){
+    trocarDepoimento();
+    intervalo = setInterval(trocarDepoimento, 5200);
+  }
+
+  function pararRotacao(){
+    clearInterval(intervalo);
+  }
+
+  box.addEventListener("mouseenter", pararRotacao);
+  box.addEventListener("mouseleave", iniciarRotacao);
+
+  iniciarRotacao();
+});
+</script>
+
 </body>
 </html>
