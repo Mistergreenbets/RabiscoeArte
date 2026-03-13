@@ -182,5 +182,21 @@
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto24.png",
     "descricao": "Ecobag personalizada confeccionada em material resistente e reutilizável, ideal para quem busca praticidade com estilo. A personalização é feita com alta qualidade, garantindo cores vivas e excelente durabilidade.",
     "badge": ""
+  },
+  {
+    "nome": "Chaveiro",
+    "preco": 6,
+    "categoria": "presentes",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto26.png",
+    "descricao": "Transforme um momento especial em algo que você pode levar todos os dias no bolso.",
+    "badge": "Novidade"
+  },
+  {
+    "nome": "Almofada",
+    "preco": 20,
+    "categoria": "decoracao",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto25.png",
+    "descricao": "Não é só uma almofada… É uma lembrança cheia de sentimento.",
+    "badge": "Promoção"
   }
 ]
