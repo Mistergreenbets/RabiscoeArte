@@ -198,5 +198,13 @@
     "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto25.png",
     "descricao": "Não é só uma almofada… É uma lembrança cheia de sentimento.",
     "badge": "Promoção"
+  },
+  {
+    "nome": "Agenda Personalizada",
+    "preco": 35,
+    "categoria": "presentes",
+    "imagem": "https://mistergreenbets.github.io/RabiscoeArte/imgs/produto27.png",
+    "descricao": "Organize seus sonhos, metas e compromissos em uma agenda feita especialmente para você.",
+    "badge": "Novidade"
   }
 ]
